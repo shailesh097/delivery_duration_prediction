@@ -1,10 +1,8 @@
 # %%
-import random
+import numpy as np
+import pandas as pd
 
-# Create a list of 10 random numbers between 1 and 100
-my_list = random.sample(range(1, 101), 10)
-print(my_list)
-
-
-
+arr = np.array([True, False, True, False, False])
+df = pd.DataFrame(arr)
+df.sum()
 # %%
