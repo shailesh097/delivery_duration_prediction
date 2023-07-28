@@ -7,10 +7,7 @@ We will build a model to estimate the time taken for the delivery.
 Time taken for the delivery is the time between the placed order `created_at` to when the order will be delivered to the consumer `actual_delivery_time`.
 
 #### Data Description
-The file `historical_data.csv` contains a subset of deliveries recieved. Each row corresponds to each unique delivery.
-
-> Note that the currency data is provided in cents.
-> All time durations are provided in seconds.
+The file `historical_data.csv` contains a subset of deliveries recieved. Each row corresponds to each unique delivery. Note that the currency data is provided in cents and all time durations are provided in seconds.
 
 The target value to predict is the total seconds between `created_at` and `actual_delivery_time`. 
 
