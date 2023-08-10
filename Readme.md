@@ -45,4 +45,14 @@ We have predictions from other models for various stages of delivery process tha
 - `estimated_order_place_duration`: Estimated time for the restaurant to receive the order from DoorDash (in seconds)
 - `estimated_store_to_consumer_driving_duration`: Estimated travel time between store and consumer (in seconds)
 
-### Method
+## Method
+#### 1. Data Exploration
+We have to predict the total time taken for an order. To calculate the total time,  ***order creation*** and ***actual delivery*** time is required. 
+$$Total\space Time = Delivery \space Time - Order\space Created\space Time$$
+
+We are going to predict the total delivery time using regression. Therefore, we will required a ***target variable***. Let's give the target variable column name as `actual_total_delivery_duration`. 
+
+#### 2. Data Preparation
+The categorical data should be converted to the numerical data for it to be fed into Machine Learning Model. We create *dummy variable* for each column which has categorical data. In our dataset columns `order_protocol`, `market_id` and `store_primary_category` are non-numeric therefore we create *dummy variable* for each of these columns and concatenate all those features into our main dataset. We drop unnecessary columns in our main dataset and create a new training dataset. 
+
+Any rows containing NaN or Infinite values should be dropped.
