@@ -69,4 +69,33 @@ Numeric columns in our data was originally in `float64` format. We converted it 
 To remove further features use feature engineering. Create new feature out of the highly correlated features and drop the highly correlated features.
 
 **Remove Multicollinearity:**
-To remove multicollinearity, in our case, we used ***Variance Inflation Factor(VIF)*** method.
+To remove multicollinearity, in our case, we used ***Variance Inflation Factor(VIF)*** method. Higher the VIF score higher the multicollinearity.
+
+**Feature Selection:**
+Check for important features by running *Random Forest Regression* on training dataset. *Gini-importance* index gives the important features in the training dataset.
+
+**Dimension Reduction:**
+There are various ways we can reduce the dimension of our dataset to improve performance of our model. We used ***Principal Component Analysis(PCA)*** method to reduce the dimension of our training dataset.
+
+#### 3. Model Building
+After the data has been prepared, we use different *regression-methods* on different sets of *features* using different data *scalers*. 
+
+**Regression Models Used:**
+1. Ridge Regressor
+2. Decision Tree Regressor
+3. Random Forest Regressor
+4. XGB Regressor 
+5. LGBMR Regressor
+6. MLP Regressor
+
+**Feature Sets:**
+1. Full Dataset(80 features)
+2. 40 Features
+3. 20 Features
+4. 10 Features
+
+**Sclaers:**
+1. Standard Scaler
+2. Min Max Scaler
+
+After testing is complete, we choose the optimal performing regression model(model with least mean squared error) with optimal feature set and scalers in our prediction model. 
