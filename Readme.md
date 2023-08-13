@@ -50,7 +50,7 @@ We have predictions from other models for various stages of delivery process tha
 We have to predict the total time taken for an order. To calculate the total time,  ***order creation*** and ***actual delivery*** time is required. 
 $$Total\space Time = Delivery \space Time - Order\space Created\space Time$$
 
-We are going to predict the total delivery time using regression. Therefore, we will required a ***target variable***. Let's give the target variable column name as `actual_total_delivery_duration`. 
+We are going to predict the total delivery time using regression. Therefore, we will required a ***target variable***. Let's give the name for target variable column as `actual_total_delivery_duration`. 
 
 #### 2. Data Preparation
 - **Handling Categorical Variable:**
