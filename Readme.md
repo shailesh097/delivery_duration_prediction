@@ -53,28 +53,28 @@ $$Total\space Time = Delivery \space Time - Order\space Created\space Time$$
 We are going to predict the total delivery time using regression. Therefore, we will required a ***target variable***. Let's give the target variable column name as `actual_total_delivery_duration`. 
 
 #### 2. Data Preparation
-**Handling Categorical Variable:**
+- **Handling Categorical Variable:**
 The categorical data should be converted to the numerical data for it to be fed into Machine Learning Model. We create *dummy variable* for each column which has categorical data. In our dataset columns `order_protocol`, `market_id` and `store_primary_category` are non-numeric therefore we create *dummy variable* for each of these columns and concatenate all those features into our main dataset. We drop unnecessary columns in our main dataset and create a new training dataset. 
 
-**Handling NaN and Infinite Values:**
+- **Handling NaN and Infinite Values:**
 Any rows containing NaN or Infinite values should be dropped.
 
-**Removing Collinearity and Redundancy:**
+- **Removing Collinearity and Redundancy:**
 Check for *Top Absolute Correlated* features and drop them.
 
-**Convert numeric data to `float32`:**
+- **Convert numeric data to `float32`:**
 Numeric columns in our data was originally in `float64` format. We converted it to `float32` to reduce the total memory footprint. 
 
-**Feature Engineering:**
+- **Feature Engineering:**
 To remove further features use feature engineering. Create new feature out of the highly correlated features and drop the highly correlated features.
 
-**Remove Multicollinearity:**
+- **Remove Multicollinearity:**
 To remove multicollinearity, in our case, we used ***Variance Inflation Factor(VIF)*** method. Higher the VIF score higher the multicollinearity.
 
-**Feature Selection:**
+- **Feature Selection:**
 Check for important features by running *Random Forest Regression* on training dataset. *Gini-importance* index gives the important features in the training dataset.
 
-**Dimension Reduction:**
+- **Dimension Reduction:**
 There are various ways we can reduce the dimension of our dataset to improve performance of our model. We used ***Principal Component Analysis(PCA)*** method to reduce the dimension of our training dataset.
 
 #### 3. Model Building
